@@ -1,4 +1,4 @@
-#Ricards Meiers-Meiris 221RDB246
+#Ricards Meiers-Meiris 221RDB246 1 grupa
 import heapq
 
 def parallel_processing(n, m, data):
