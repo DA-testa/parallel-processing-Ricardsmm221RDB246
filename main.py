@@ -5,11 +5,15 @@ def parallel_processing(n, m, data):
     output = []
     threads = [(0, i) for i in range(n)]
     heapq.heapify(threads)
+    current_time = 0
 
     for job_index, job_time in enumerate(data):
         start_time, thread_index = heapq.heappop(threads)
-        output.append((thread_index, start_time))
-        heapq.heappush(threads, (start_time + job_time, thread_index))
+        if current_time > start_time:
+            current_time = start_time
+        output.append((thread_index, current_time))
+        current_time += job_time
+        heapq.heappush(threads, (current_time, thread_index))
 
     return output
 
@@ -23,5 +27,5 @@ def main():
         print(thread_index, start_time)
 
 if __name__ == "__main__":
-    main() 
+    main()
 
