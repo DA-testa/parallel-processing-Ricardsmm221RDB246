@@ -1,3 +1,4 @@
+#Ricards Meiers-Meiris 221RDB246
 import heapq
 
 def parallel_processing(n, m, data):
